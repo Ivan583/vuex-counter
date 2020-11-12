@@ -11,12 +11,16 @@
 <script>
 export default {
   name: "App",
-  data() {
-    return {
-      header: "Vuex App",
-      welcome: "Welome to our App",
-      counter: 0
-    };
+  computed: {
+    header() {
+      return this.$store.getters.header;
+    },
+    welcome() {
+      return this.$store.getters.welcome;
+    },
+    counter() {
+      return this.$store.getters.counter;
+    }
   }
 };
 </script>
