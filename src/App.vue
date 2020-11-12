@@ -9,15 +9,11 @@
 
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: "App",
   computed: mapGetters(["header", "welcome", "counter"]),
-  methods: {
-    increment() {
-      this.$store.dispatch("increment", 5);
-    }
-  }
+  methods: mapActions(["increment"])
 };
 </script>
 

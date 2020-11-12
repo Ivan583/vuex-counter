@@ -6,7 +6,7 @@ export default {
     },
     actions: {
         increment(ctx, payload) {
-            ctx.commit('increment', payload);
+            ctx.commit('increment', payload = 5);
         }
     },
     mutations: {
