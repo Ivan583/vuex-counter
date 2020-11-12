@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{ header }}</h1>
+    <h2>{{ welcome }}</h2>
+    <h3>{{ counter }}</h3>
+    <button @click="increment">Increase</button>
+    <button @click="reset">Reset</button>
+    <button @click="decrement">Decrease</button>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
 
+<script>
+import { mapGetters, mapActions } from "vuex";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  computed: mapGetters(["header", "welcome", "counter"]),
+  methods: mapActions(["increment", "decrement", "reset"])
+};
 </script>
 
 <style>
@@ -21,8 +24,12 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  text-align: left;
+  color: green;
+  margin: 60px 0 0 60px;
+}
+
+button {
+  margin-right: 0.5rem;
 }
 </style>
