@@ -9,19 +9,10 @@
 
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "App",
-  computed: {
-    header() {
-      return this.$store.getters.header;
-    },
-    welcome() {
-      return this.$store.getters.welcome;
-    },
-    counter() {
-      return this.$store.getters.counter;
-    }
-  }
+  computed: mapGetters(["header", "welcome", "counter"])
 };
 </script>
 
