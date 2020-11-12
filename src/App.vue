@@ -4,6 +4,7 @@
     <h2>{{ welcome }}</h2>
     <h3>{{ counter }}</h3>
     <button @click="increment">Increase</button>
+    <button @click="decrement">Decrease</button>
   </div>
 </template>
 
@@ -13,7 +14,7 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "App",
   computed: mapGetters(["header", "welcome", "counter"]),
-  methods: mapActions(["increment"])
+  methods: mapActions(["increment", "decrement"])
 };
 </script>
 
@@ -25,5 +26,9 @@ export default {
   text-align: left;
   color: green;
   margin: 60px 0 0 60px;
+}
+
+button {
+  margin-right: 0.5rem;
 }
 </style>

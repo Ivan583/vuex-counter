@@ -7,11 +7,17 @@ export default {
     actions: {
         increment(ctx, payload) {
             ctx.commit('increment', payload = 5);
+        },
+        decrement(ctx, payload) {
+            ctx.commit('decrement', payload = 5);
         }
     },
     mutations: {
         increment(state, payload) {
             state.counter += payload;
+        },
+        decrement(state, payload) {
+            state.counter -= payload;
         }
     },
     getters: {
