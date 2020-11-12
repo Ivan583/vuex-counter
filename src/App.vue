@@ -3,7 +3,7 @@
     <h1>{{ header }}</h1>
     <h2>{{ welcome }}</h2>
     <h3>{{ counter }}</h3>
-    <button>Increase</button>
+    <button @click="increment">Increase</button>
   </div>
 </template>
 
@@ -12,7 +12,12 @@
 import { mapGetters } from "vuex";
 export default {
   name: "App",
-  computed: mapGetters(["header", "welcome", "counter"])
+  computed: mapGetters(["header", "welcome", "counter"]),
+  methods: {
+    increment() {
+      this.$store.dispatch("increment", 5);
+    }
+  }
 };
 </script>
 

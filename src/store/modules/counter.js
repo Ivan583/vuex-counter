@@ -4,8 +4,16 @@ export default {
         welcome: "Welcome to our App",
         counter: 0
     },
-    actions: {},
-    mutations: {},
+    actions: {
+        increment(ctx, payload) {
+            ctx.commit('increment', payload);
+        }
+    },
+    mutations: {
+        increment(state, payload) {
+            state.counter += payload;
+        }
+    },
     getters: {
         header(state) {
             return state.header.toUpperCase();
