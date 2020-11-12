@@ -10,6 +10,9 @@ export default {
         },
         decrement(ctx, payload) {
             ctx.commit('decrement', payload = 5);
+        },
+        reset(ctx, payload) {
+            ctx.commit('reset', payload);
         }
     },
     mutations: {
@@ -18,6 +21,9 @@ export default {
         },
         decrement(state, payload) {
             state.counter -= payload;
+        },
+        reset(state, payload) {
+            state.counter = 0;
         }
     },
     getters: {
