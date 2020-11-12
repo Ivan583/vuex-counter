@@ -1,10 +1,23 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <h1>{{ header }}</h1>
+    <h2>{{ welcome }}</h2>
+    <h3>{{ counter }}</h3>
+    <button>Increase</button>
+  </div>
 </template>
+
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  data() {
+    return {
+      header: "Vuex App",
+      welcome: "Welome to our App",
+      counter: 0
+    };
+  }
 };
 </script>
 
@@ -13,8 +26,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  text-align: left;
+  color: green;
+  margin: 60px 0 0 60px;
 }
 </style>
